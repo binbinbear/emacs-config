@@ -66,7 +66,7 @@ adjust the window size and transparency
 
 
 (setq org-plantuml-jar-path
-      (expand-file-name "/Users/cbernie/Documents/emacs-ext/plantuml.jar"))
+      (expand-file-name "~/.emacs.d/emacs-ext/plantuml.jar"))
 
 (use-package swiper
   :ensure t
