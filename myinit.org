@@ -237,8 +237,16 @@ whant to execute add emacs-lisp
 
 * Org Agenda
   #+begin_src emacs-lisp
-(load-library "find-lisp")
-(setq org-agenda-files (find-lisp-find-files "~/Documents/TeckDoc/Org/" "\.org$"))
+;;(use-package "find-lisp"
+;;   :ensure t)
+;;(setq org-agenda-files (find-lisp-find-files "~/Documents/TeckDoc/Org/" "\.org$"))
+;;(setq org-agenda-files (list "~/Documents/TeckDoc/Org/"))
+  (setq org-agenda-files (directory-files-recursively "~/Documents/org/" "\\.org$"))
   #+end_src
+
+
+
+
+
 
 
