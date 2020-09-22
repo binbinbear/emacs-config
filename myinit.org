@@ -80,8 +80,8 @@ adjust the window size and transparency
      (global-set-key "\C-s" 'swiper)
      (global-set-key (kbd "C-c C-r") 'ivy-resume)
      (global-set-key (kbd "<f6>") 'ivy-resume)
-     (global-set-key (kbd "M-x") 'counsel-M-x)
-     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+     ;;(global-set-key (kbd "M-x") 'counsel-M-x)
+     ;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
      (global-set-key (kbd "<f1> f") 'counsel-describe-function)
      (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
      
@@ -117,6 +117,7 @@ adjust the window size and transparency
 
 (setq split-width-threshold 1)
 #+end_src
+
 
 
 * Reveal.js
@@ -232,9 +233,6 @@ whant to execute add emacs-lisp
     (setq web-mode-enable-auto-closing t))
   #+end_src
 
-
-
-
 * Org Agenda
   #+begin_src emacs-lisp
 ;;(use-package "find-lisp"
@@ -242,6 +240,11 @@ whant to execute add emacs-lisp
 ;;(setq org-agenda-files (find-lisp-find-files "~/Documents/TeckDoc/Org/" "\.org$"))
 ;;(setq org-agenda-files (list "~/Documents/TeckDoc/Org/"))
   (setq org-agenda-files (directory-files-recursively "~/Documents/org/" "\\.org$"))
+  #+end_src
+
+* Org Image
+  #+begin_src emacs-lisp
+  (setq org-image-actual-width nil)
   #+end_src
 
 
