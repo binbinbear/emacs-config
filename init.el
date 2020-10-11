@@ -37,7 +37,7 @@
  '(org-agenda-files
    '("~/Documents/TeckDoc/Org/vcp/mode-c.org" "/Users/cbernie/Documents/TeckDoc/Org/css.org" "/Users/cbernie/Documents/TeckDoc/Org/cv.org" "/Users/cbernie/Documents/TeckDoc/Org/plan.org"))
  '(package-selected-packages
-   '(web-mode engine-mode google-translate-default-ui google-translate unicode-escape baidu-translate youdao-dictionary aggresive-indent undo-tree flycheck htmlize ox-reveal zenburn-theme which-key use-package try smartparens smart-mode-line restart-emacs org-superstar org-bullets nodejs-repl monokai-theme js2-mode hungry-delete gruvbox-theme exec-path-from-shell counsel company color-theme avy auto-complete))
+   '(neotree web-mode engine-mode google-translate-default-ui google-translate unicode-escape baidu-translate youdao-dictionary aggresive-indent undo-tree flycheck htmlize ox-reveal zenburn-theme which-key use-package try smartparens smart-mode-line restart-emacs org-superstar org-bullets nodejs-repl monokai-theme js2-mode hungry-delete gruvbox-theme exec-path-from-shell counsel company color-theme avy auto-complete))
  '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map

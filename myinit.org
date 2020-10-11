@@ -253,3 +253,10 @@ whant to execute add emacs-lisp
 
 
 
+* NEO
+  #+begin_src emacs-lisp
+  (use-package neotree
+  :ensure t)
+  (global-set-key [f8] 'neotree-toggle)
+  #+end_src
+
