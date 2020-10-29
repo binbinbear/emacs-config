@@ -260,3 +260,17 @@ whant to execute add emacs-lisp
   (global-set-key [f8] 'neotree-toggle)
   #+end_src
 
+
+* Markdown Mode
+  #+begin_src emacs-lisp
+  (use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "/usr/local/bin/pandoc"))
+  #+end_src
+
+
+
+
