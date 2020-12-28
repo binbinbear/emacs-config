@@ -1,4 +1,12 @@
 #+STARTIP: overview
+* Path varaible
+  #+begin_src emacs-lisp
+(use-package exec-path-from-shell
+    :ensure t)
+(exec-path-from-shell-initialize)
+  #+end_src
+
+
 * interface tweaks 
 #+BEGIN_SRC emacs-lisp
 (tool-bar-mode -1)
@@ -12,12 +20,13 @@
 adjust the window size and transparency
 #+begin_src emacs-lisp
 (when window-system (set-frame-size (selected-frame) 160 50))
- (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
- (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+ (set-frame-parameter (selected-frame) 'alpha '(100 . 50))
+ (add-to-list 'default-frame-alist '(alpha . (100 . 50)))
 #+end_src
 
 #+RESULTS:
-: ((alpha 85 . 50) (alpha 80 . 50) (alpha 95 . 50) (vertical-scroll-bars))
+: ((alpha 100 . 50) (vertical-scroll-bars))
+
 
 * Org
   #+begin_src emacs-lisp
@@ -28,6 +37,7 @@ adjust the window size and transparency
 
   #+RESULTS:
   : org-capture
+
 
 * try
 #+begin_src emacs-lisp
@@ -110,15 +120,16 @@ adjust the window size and transparency
 ;;(use-package color-theme
 ;;  :ensure t)
 
+;;(use-package zenburn-theme
+;;  :ensure t
+;;  :config (load-theme 'zenburn t))
 
-(use-package zenburn-theme
-  :ensure t
-  :config (load-theme 'zenburn t))
+(use-package  leuven-theme
+    :ensure t
+    :config (load-theme ' leuven t))
 
 (setq split-width-threshold 1)
 #+end_src
-
-
 
 * Reveal.js
   #+begin_src emacs-lisp
@@ -233,6 +244,7 @@ whant to execute add emacs-lisp
     (setq web-mode-enable-auto-closing t))
   #+end_src
 
+
 * Org Agenda
   #+begin_src emacs-lisp
 ;;(use-package "find-lisp"
@@ -247,11 +259,26 @@ whant to execute add emacs-lisp
   (setq org-image-actual-width nil)
   #+end_src
 
+* XML
+  #+begin_src emacs-lisp
+  (require 'hideshow)
+(require 'sgml-mode)
+(require 'nxml-mode)
 
+(add-to-list 'hs-special-modes-alist
+             '(nxml-mode
+               "<!--\\|<[^/>]*[^/]>"
+               "-->\\|</[^/>]*[^/]>"
 
+               "<!--"
+               sgml-skip-tag-forward
+               nil))
 
+(add-hook 'nxml-mode-hook 'hs-minor-mode)
 
-
+;; optional key bindings, easier than hs defaults
+(define-key nxml-mode-map (kbd "C-c h") 'hs-toggle-hiding)
+  #+end_src
 
 * NEO
   #+begin_src emacs-lisp
@@ -273,4 +300,30 @@ whant to execute add emacs-lisp
 
 
 
+
+* Mind Map
+  #+begin_src emacs-lisp
+  (use-package org-mind-map
+  :init
+  (require 'ox-org)
+  :ensure t
+  ;; Uncomment the below if 'ensure-system-packages` is installed
+  ;;:ensure-system-package (gvgen . graphviz)
+  :config
+  (setq org-mind-map-engine "dot")       ; Default. Directed Graph
+  ;; (setq org-mind-map-engine "neato")  ; Undirected Spring Graph
+  ;; (setq org-mind-map-engine "twopi")  ; Radial Layout
+  ;; (setq org-mind-map-engine "fdp")    ; Undirected Spring Force-Directed
+  ;; (setq org-mind-map-engine "sfdp")   ; Multiscale version of fdp for the layout of large graphs
+  ;; (setq org-mind-map-engine "twopi")  ; Radial layouts
+  ;; (setq org-mind-map-engine "circo")  ; Circular Layout
+  )
+  #+end_src
+
+
+* Paste in emacs terminal
+  #+begin_src emacs-lisp
+(eval-after-load "term"
+  '(define-key term-raw-map (kbd "C-c C-y") 'term-paste))  
+  #+end_src
 
